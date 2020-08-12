@@ -28,3 +28,16 @@ const controlFnExec = fnParam => allowed => {
 }
 
 const handleFnExecution = controlFnExec(fn);
+
+handleFnExecution(true); // Executará a função fn
+handleFnExecution(); // Não executará a função fn
+
+/* controlFnExec como função
+function controlFnExec(fnParam) {
+	return function(allowed) {
+		if (allowed) {
+			fnParam();
+		}
+	}
+}
+*/
