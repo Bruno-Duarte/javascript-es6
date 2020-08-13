@@ -36,3 +36,30 @@ persons.forEach(person => {
 
 // Filtrar array
 const mens = persons.filter(person => person.gender === gender.MAN);
+console.log('Nova lista apenas com homens:', mens);
+
+// Retornar um novo
+const personWithCourse = persons.map(person => {
+    person.course = 'Introdução ao Javascript';
+    return person;
+});
+
+console.log('Pessoas com a adição do course:', personWithCourse);
+
+// Transformar um array em outro tipo
+const totalAge = persons.reduce((age, person) => {
+    age += person.age;
+    return age;
+}, 0);
+
+console.log('Soma de idade das pessoas', totalAge);
+
+// Juntando operações
+const totalEvenAges = persons
+    .filter(person => person.age % 2 === 0)
+    .reduce((age, person) => {
+        age += person.age;
+        return age;
+    }, 0);
+
+console.log('Soma de idades das pessoas que possuem idade par', totalEvenAges);
